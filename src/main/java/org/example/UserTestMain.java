@@ -6,8 +6,6 @@ public class UserTestMain {
 
         UserDAO udao = new UserDAOImpl();
 
-        //udao.create();
-
         System.out.println(udao.getByFirstName("Lennart"));
         System.out.println(udao.getByFirstName("Valdemar"));
         System.out.println(udao.getByFirstName("Svea"));
