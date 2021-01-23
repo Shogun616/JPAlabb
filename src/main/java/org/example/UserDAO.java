@@ -10,5 +10,7 @@ public interface UserDAO {
 
     List<User> getByLastName(String LastName);
 
+    boolean update(String id, String FirstName);
+
     boolean remove(String id);
 }

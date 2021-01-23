@@ -27,6 +27,16 @@ public class Main {
         System.out.println(list);
         em.getTransaction().commit();
 
+        em = emf.createEntityManager();
+		em.getTransaction().begin();
+		list = em.createQuery("from User u where u.FirstName = :FirstName", User.class)
+                .setParameter("FirstName", "Philip")
+                .getResultList();
+		for (User pp : list) {
+			em.remove(pp);
+		}
+		em.getTransaction().commit();
+
         em.close();
         emf.close();
     }

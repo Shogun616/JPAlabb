@@ -13,7 +13,6 @@ public class UserDAOImpl implements UserDAO{
     public void create(User u) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        u = new User("", "", "");
         em.persist(u);
         em.getTransaction().commit();
     }
@@ -38,6 +37,20 @@ public class UserDAOImpl implements UserDAO{
                 .setParameter("LastName", name).getResultList();
         em.getTransaction().commit();
         return list;
+    }
+
+    @Override
+    public boolean update(String id, String FirstName){
+        boolean success = false;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        User u = em.find(User.class, id);
+        if (u != null ) {
+            u.setFirstName(FirstName);
+            success = true;
+        }
+        em.getTransaction().commit();
+        return success;
     }
 
 
