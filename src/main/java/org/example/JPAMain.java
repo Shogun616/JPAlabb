@@ -23,7 +23,7 @@ public class JPAMain {
         User uu = new User("880930-0472", "Philip", "Mattsson");
         em.persist(uu);
         System.out.println("philipid = " + uu.getID());
-        List<User> list = em.createQuery("from User ", User.class).getResultList();
+        List<User> list = em.createQuery("from User u", User.class).getResultList();
         System.out.println(list);
         em.getTransaction().commit();
 
