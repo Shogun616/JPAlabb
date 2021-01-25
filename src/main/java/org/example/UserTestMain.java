@@ -6,6 +6,8 @@ public class UserTestMain {
 
         UserDAO udao = new UserDAOImpl();
 
+        udao.create(new User("880930-0472", "Philip", "Mattsson"));
+
         System.out.println(udao.getByFirstName("Lennart"));
         System.out.println(udao.getByFirstName("Valdemar"));
         System.out.println(udao.getByFirstName("Svea"));
@@ -14,8 +16,9 @@ public class UserTestMain {
         System.out.println(udao.getByLastName("Waltersson"));
         System.out.println(udao.getByLastName("Solberg"));
 
-        System.out.println(udao.update("530720-7675", "Alvin"));
+        System.out.println(udao.updateByFirstName("530720-7675", "Alvin"));
+        System.out.println(udao.updateByLastName("910806-1370", "Muller"));
 
-        System.out.println(udao.remove("880930-0752"));
+        System.out.println(udao.remove("880930-0472"));
     }
 }

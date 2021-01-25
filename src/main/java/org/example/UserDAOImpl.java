@@ -40,19 +40,32 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public boolean update(String id, String FirstName){
+    public boolean updateByFirstName(String id, String Name){
         boolean success = false;
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         User u = em.find(User.class, id);
         if (u != null ) {
-            u.setFirstName(FirstName);
+            u.setFirstName(Name);
             success = true;
         }
         em.getTransaction().commit();
         return success;
     }
 
+    @Override
+    public boolean updateByLastName(String id, String Name){
+        boolean success = false;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        User u = em.find(User.class, id);
+        if (u != null ) {
+            u.setLastName(Name);
+            success = true;
+        }
+        em.getTransaction().commit();
+        return success;
+    }
 
     @Override
     public boolean remove(String id) {

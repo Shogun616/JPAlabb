@@ -6,11 +6,13 @@ public interface UserDAO {
 
     void create(User u);
 
-    List<User> getByFirstName(String FirstName);
+    List<User> getByFirstName(String Name);
 
-    List<User> getByLastName(String LastName);
+    List<User> getByLastName(String Name);
 
-    boolean update(String id, String FirstName);
+    boolean updateByFirstName(String id, String Name);
+
+    boolean updateByLastName(String id, String Name);
 
     boolean remove(String id);
 }

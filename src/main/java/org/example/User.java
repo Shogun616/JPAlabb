@@ -7,37 +7,32 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private String id;
+    private String ID;
+
     private String FirstName;
     private String LastName;
 
-    public String getId() {
-        return id;
+    public String getID() {
+        return ID;
     }
-
-    public void setId(String id) {
-        this.id = id;
+    public void setID(String ID) {
+        this.ID = ID;
     }
-
     public String getFirstName() {
         return FirstName;
     }
-
     public void setFirstName(String firstName) {
         FirstName = firstName;
     }
-
     public String getLastName() {
         return LastName;
     }
-
     public void setLastName(String lastName) {
         LastName = lastName;
     }
 
-    public User(String id, String firstName, String lastName) {
-       this.id = id;
+    public User(String ID, String firstName, String lastName) {
+       this.ID = ID;
        this.FirstName = firstName;
        this.LastName = lastName;
     }
@@ -47,5 +42,5 @@ public class User {
 
     @Override
     public String toString()  {
-        return "[" + id + "/" + FirstName + "/" + LastName + "]"; }
+        return "User [id=" + ID + "/First Name=" + FirstName + "/Last Name=" + LastName + "]"; }
 }

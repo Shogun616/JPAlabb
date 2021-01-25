@@ -5,7 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
-public class Main {
+public class JPAMain {
 
     public static void main(String[] args) {
 
@@ -20,10 +20,10 @@ public class Main {
 
         em = emf.createEntityManager();
         em.getTransaction().begin();
-        User uu = new User("880930-0752", "Philip", "Mattsson");
+        User uu = new User("880930-0472", "Philip", "Mattsson");
         em.persist(uu);
-        System.out.println("PhilipID = " + uu.getId());
-        List<User> list = em.createQuery("from User", User.class).getResultList();
+        System.out.println("philipid = " + uu.getID());
+        List<User> list = em.createQuery("from User ", User.class).getResultList();
         System.out.println(list);
         em.getTransaction().commit();
 
@@ -32,8 +32,8 @@ public class Main {
 		list = em.createQuery("from User u where u.FirstName = :FirstName", User.class)
                 .setParameter("FirstName", "Philip")
                 .getResultList();
-		for (User pp : list) {
-			em.remove(pp);
+		for (User uuu : list) {
+			em.remove(uuu);
 		}
 		em.getTransaction().commit();
 
