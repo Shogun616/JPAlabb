@@ -46,11 +46,11 @@ public class User {
         Email = email;
     }
 
-    public User(String ID, String UserName, String firstName, String lastName, String Email) {
+    public User(String ID, String firstName, String lastName, String UserName, String Email) {
        this.ID = ID;
-       this.UserName = UserName;
        this.FirstName = firstName;
        this.LastName = lastName;
+        this.UserName = UserName;
        this.Email = Email;
     }
 
@@ -59,5 +59,5 @@ public class User {
 
     @Override
     public String toString()  {
-        return "User [id=" + ID + "/First Name=" + FirstName + "/Last Name=" + LastName + "]"; }
+        return "User [ID=" + ID  + " /FirstName=" + FirstName + " /LastName=" + LastName +  " /UserName=" + UserName + " /Email=" + Email + "]"; }
 }

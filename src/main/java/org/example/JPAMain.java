@@ -20,7 +20,7 @@ public class JPAMain {
 
         em = emf.createEntityManager();
         em.getTransaction().begin();
-        User uu = new User("880930-0472","phma", "Philip", "Mattsson", "philip.mattsson@iths.se");
+        User uu = new User("880930-0472","Philip", "Mattsson", "phma", "philip.mattsson@iths.se");
         em.persist(uu);
         System.out.println("philipID = " + uu.getID());
         List<User> list = em.createQuery("from User u", User.class).getResultList();
