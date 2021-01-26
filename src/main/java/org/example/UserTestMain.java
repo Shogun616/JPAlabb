@@ -6,7 +6,7 @@ public class UserTestMain {
 
         UserDAO udao = new UserDAOImpl();
 
-        udao.create(new User("880930-0472", "Philip", "Mattsson"));
+        udao.create(new User("880930-0472","phma", "Philip", "Mattsson", "philip.mattsson@iths.se"));
 
         System.out.println(udao.getByFirstName("Lennart"));
         System.out.println(udao.getByFirstName("Valdemar"));
